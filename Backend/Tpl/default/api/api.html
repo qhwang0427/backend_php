@@ -1,0 +1,11 @@
+<form method = "post" action ="__APP__/api/v1/vouchers/index.mobile">
+	firstname2:<input type="text" name="tile"><br/>
+	lastname2:<textarea name="content" rows="5" cols="25"></textarea><br/>
+	<input type="submit" value="upgrade">
+</form>
+
+<volist name='list' id='vo'>
+id:{$vo.id}<br/>
+firstname:{$vo.firstname}<br/>
+lastname:{$vo.lastname}<hr>
+</volist>
