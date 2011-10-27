@@ -1,0 +1,26 @@
+charities:<br/>
+<form method = "post" action ="__APP__/api/v1/charities/list.mobile">
+	
+	<input type="submit" value="getMes">
+</form>
+
+<volist name='charities' id='charity'>
+activity:<br/>
+id:{$charity.id}<br/>
+name:{$charity.name}<br/>
+comment:{$charity.comment}<br/>
+extended_url:{$charity.extended_url}<br/>
+logo:{$charity.logo}<br/>
+logo_grid:{$charity.logo_grid}<br/>
+priority:{$charity.priority}<hr>
+
+	<volist name="charity['effects']" id='vo'>
+		eid:{$vo.id}<br/>
+		epoints:{$vo.points}<br/>
+		eicon:{$vo.icon}<br/>
+		etitle:{$vo.title}<br/>
+		emessage:{$vo.message}<p>
+	</volist>
+
+	<hr><hr>
+</volist>
