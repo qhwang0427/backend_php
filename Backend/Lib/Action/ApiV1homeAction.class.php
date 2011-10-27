@@ -12,6 +12,9 @@ class ApiV1homeAction extends Action{
     	
     	$serverend_action=M('serverendaction');
     	$res2 = $serverend_action->where("uid=$uid and is_recommend=0")->select();
+    	for($i=0;$i<count($res2);$i++)
+    		$res2[$i]['timestamp']=strtotime($res2[$i]['timestamp']);//转为时间戳输出
+    		
     	
     	$users = M('users');
     	$res3 = $users->where("id=$uid")->select();
@@ -26,6 +29,7 @@ class ApiV1homeAction extends Action{
     	$this->assign('points',$points);
     	$this->assign('status',$status);
     	$this->assign('activity',$res2);
+    	$this->assign('testtime',$testtime);
     	
     	$this->display('api:home');
     }
