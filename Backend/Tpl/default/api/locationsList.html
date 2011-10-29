@@ -1,0 +1,24 @@
+<form method = "post" action ="__APP__/api/v1/locations/list.mobile">
+	userid:<input type="text" name="uid"><br/>
+	latitude:<input type="text" name="latitude"><br/>
+	longitude:<input type="text" name="longitude"><br/>
+	<input type="submit" value="getMes">
+</form>
+
+radius:{$radius}m<br/>
+
+<volist name='locations' id='vo'>
+activity:<br/>
+id:{$vo.id}<br/>
+type:{$vo.type}<br/>
+name:{$vo.name}<br/>
+comment:{$vo.comment}<br/>
+address:{$vo.address}<br/>
+latitude:{$vo.latitude}<br/>
+longitude:{$vo.longitude}<br/>
+radius:{$vo.radius}<br/>
+points:{$vo.points}<br/>
+count:{$vo.count}<br/>
+logo:{$vo.logo}<br/>
+extended_url:{$vo.extended_url}<hr>
+</volist>
